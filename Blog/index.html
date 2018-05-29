@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="scss/style.css">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe"
         crossorigin="anonymous"></script>
     <title>Blog</title>
@@ -20,29 +21,48 @@
                 </div>
                 <div class="header__logo__seach">
                     <input type="text" placeholder="Seach">
-                    <button><i class="fas fa-search"></i></button>
+                    <button>
+                        <i class="fas fa-search"></i>
+                    </button>
                 </div>
             </div>
             <div class="header__sign">
                 <ul>
-                    <li><i class="fas fa-sign-out-alt"></i> Sign in</li>
-                    <li>Sign up</li>
+                    <li>
+                        <i class="fas fa-sign-out-alt"></i>
+                        <button id="btn-in">Sign in</button>
+                    </li>
+                    <li>
+                        <button id="btn-up"> Sign up</button>
+                    </li>
                 </ul>
             </div>
         </article>
         <div class="banner">
             <img src="images/banner.jpg" alt="">
         </div>
+        <nav class="nav">
+            <ul>
+                <li>
+                    <a href="">Bài viết mới</a>
+                </li>
+                <li>
+                    <a href="">Bài viết hay</a>
+                </li>
+                <li>
+                    <a href="">Series</a>
+                </li>
+            </ul>
+        </nav>
     </header>
+
+ 
+
+
+
+
     <section class="main-content">
         <article class="content">
-            <nav class="nav">
-                <ul>
-                    <li>Bài viết mới</li>
-                    <li>Bài viết hay</li>
-                    <li>Series</li>
-                </ul>
-            </nav>
             <div class="posts">
                 <div class="posts__avatar">
                     <img src="images/avatar.jpg" alt="">
@@ -50,16 +70,22 @@
                 <div class="posts__detail">
                     <div class="posts__detail__title">
                         <div>
-                            <h2>Tiêu đề bài viết</h2>
+                            <h3>
+                                <a href="">Two-Factor Authentication và ứng dụng</a>
+                            </h3>
                         </div>
                         <div>
                             <ul>
                                 <li>
-                                    <i class="far fa-eye"></i>
+                                    <a href="">
+                                        <i class="far fa-eye"></i>
+                                    </a>
                                     <p>1000</p>
                                 </li>
                                 <li>
-                                    <i class="far fa-comment"></i>
+                                    <a href="">
+                                        <i class="far fa-comment"></i>
+                                    </a>
                                     <p>1000</p>
                                 </li>
                             </ul>
@@ -100,16 +126,22 @@
                 <div class="posts__detail">
                     <div class="posts__detail__title">
                         <div>
-                            <h2>Tiêu đề bài viết</h2>
+                            <h3>
+                                <a href="">Tại sao các công ty không gửi mail báo "rớt" cho bạn là những công ty có HR tệ nhất quả đất? </a>
+                            </h3>
                         </div>
                         <div>
                             <ul>
                                 <li>
-                                    <i class="far fa-eye"></i>
+                                    <a href="">
+                                        <i class="far fa-eye"></i>
+                                    </a>
                                     <p>1000</p>
                                 </li>
                                 <li>
-                                    <i class="far fa-comment"></i>
+                                    <a href="">
+                                        <i class="far fa-comment"></i>
+                                    </a>
                                     <p>1000</p>
                                 </li>
                             </ul>
@@ -143,6 +175,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="posts">
                 <div class="posts__avatar">
                     <img src="images/avatar.jpg" alt="">
@@ -150,16 +183,22 @@
                 <div class="posts__detail">
                     <div class="posts__detail__title">
                         <div>
-                            <h2>Tiêu đề bài viết</h2>
+                            <h3>
+                                <a href="">Một số câu hỏi phỏng vấn JavaScript hay và khó 1 - Chắc ai đó sẽ cần !</a>
+                            </h3>
                         </div>
                         <div>
                             <ul>
                                 <li>
-                                    <i class="far fa-eye"></i>
+                                    <a href="">
+                                        <i class="far fa-eye"></i>
+                                    </a>
                                     <p>1000</p>
                                 </li>
                                 <li>
-                                    <i class="far fa-comment"></i>
+                                    <a href="">
+                                        <i class="far fa-comment"></i>
+                                    </a>
                                     <p>1000</p>
                                 </li>
                             </ul>
@@ -193,6 +232,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="posts">
                 <div class="posts__avatar">
                     <img src="images/avatar.jpg" alt="">
@@ -200,16 +240,23 @@
                 <div class="posts__detail">
                     <div class="posts__detail__title">
                         <div>
-                            <h2>Tiêu đề bài viết</h2>
+                            <h3>
+                                <a href="">Google cách học tốt tiếng anh thì ra hàng đống kết quả nhưng đảm bảo không có cái nào dùng được (nếu dùng được thì bạn đã tiến bộ rồi phải không). ...
+                                        Mòe viết 25 ngày trước</a>
+                            </h3>
                         </div>
                         <div>
                             <ul>
                                 <li>
-                                    <i class="far fa-eye"></i>
+                                    <a href="">
+                                        <i class="far fa-eye"></i>
+                                    </a>
                                     <p>1000</p>
                                 </li>
                                 <li>
-                                    <i class="far fa-comment"></i>
+                                    <a href="">
+                                        <i class="far fa-comment"></i>
+                                    </a>
                                     <p>1000</p>
                                 </li>
                             </ul>
@@ -243,6 +290,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="posts">
                 <div class="posts__avatar">
                     <img src="images/avatar.jpg" alt="">
@@ -250,16 +298,22 @@
                 <div class="posts__detail">
                     <div class="posts__detail__title">
                         <div>
-                            <h2>Tiêu đề bài viết</h2>
+                            <h3>
+                                <a href="">Tiêu đề bài viếtTiêu đề bài viếtTiêu đề bài viếtTiêu đề bài viếtTiêu đề bài viếtTiêu đề bài viếtTiêu đề bài viết</a>
+                            </h3>
                         </div>
                         <div>
                             <ul>
                                 <li>
-                                    <i class="far fa-eye"></i>
+                                    <a href="">
+                                        <i class="far fa-eye"></i>
+                                    </a>
                                     <p>1000</p>
                                 </li>
                                 <li>
-                                    <i class="far fa-comment"></i>
+                                    <a href="">
+                                        <i class="far fa-comment"></i>
+                                    </a>
                                     <p>1000</p>
                                 </li>
                             </ul>
@@ -293,6 +347,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="posts">
                 <div class="posts__avatar">
                     <img src="images/avatar.jpg" alt="">
@@ -300,16 +355,22 @@
                 <div class="posts__detail">
                     <div class="posts__detail__title">
                         <div>
-                            <h2>Tiêu đề bài viết</h2>
+                            <h3>
+                                <a href="">Tiêu đề bài viết</a>
+                            </h3>
                         </div>
                         <div>
                             <ul>
                                 <li>
-                                    <i class="far fa-eye"></i>
+                                    <a href="">
+                                        <i class="far fa-eye"></i>
+                                    </a>
                                     <p>1000</p>
                                 </li>
                                 <li>
-                                    <i class="far fa-comment"></i>
+                                    <a href="">
+                                        <i class="far fa-comment"></i>
+                                    </a>
                                     <p>1000</p>
                                 </li>
                             </ul>
@@ -347,52 +408,74 @@
         <aside class="author">
             <div class="author__name">
                 <div class="author-title">
-                    <h2><i class="fas fa-trophy"></i> Tác giả nổi bật</h2>
+                    <h2>
+                        <i class="fas fa-trophy"></i> Tác giả nổi bật</h2>
                 </div>
                 <div class="author-user">
                     <div class="author-user__avatar">
-                        <img src="images/avatar2.jpg" alt="">
+                        <a href="">
+                            <img src="images/avatar2.jpg" alt="">
+                        </a>
                     </div>
                     <div class="author-user__name">
-                        <p>Nguyễn Văn A</p>
-                    </div>
-                </div>
-                <div class="author-user">
-                    <div class="author-user__avatar">
-                        <img src="images/avatar2.jpg" alt="">
-                    </div>
-                    <div class="author-user__name">
-                        <p>Nguyễn Văn A</p>
-                    </div>
-                </div>
-                <div class="author-user">
-                    <div class="author-user__avatar">
-                        <img src="images/avatar2.jpg" alt="">
-                    </div>
-                    <div class="author-user__name">
-                        <p>Nguyễn Văn A</p>
+                        <p>
+                            <a href="">Nguyen van A</a>
+                        </p>
                     </div>
                 </div>
                 <div class="author-user">
                     <div class="author-user__avatar">
-                        <img src="images/avatar2.jpg" alt="">
+                        <a href="">
+                            <img src="images/avatar2.jpg" alt="">
+                        </a>
                     </div>
                     <div class="author-user__name">
-                        <p>Nguyễn Văn A</p>
+                        <p>
+                            <a href="">Nguyen van A</a>
+                        </p>
                     </div>
                 </div>
                 <div class="author-user">
                     <div class="author-user__avatar">
-                        <img src="images/avatar2.jpg" alt="">
+                        <a href="">
+                            <img src="images/avatar2.jpg" alt="">
+                        </a>
                     </div>
                     <div class="author-user__name">
-                        <p>Nguyễn Văn A</p>
+                        <p>
+                            <a href="">Nguyen van A</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="author-user">
+                    <div class="author-user__avatar">
+                        <a href="">
+                            <img src="images/avatar2.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="author-user__name">
+                        <p>
+                            <a href="">Nguyen van A</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="author-user">
+                    <div class="author-user__avatar">
+                        <a href="">
+                            <img src="images/avatar2.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="author-user__name">
+                        <p>
+                            <a href="">Nguyen van A</a>
+                        </p>
                     </div>
                 </div>
             </div>
             <div class="aside__tag">
                 <div class="tag__title">
-                    <h2><i class="fas fa-tags"></i> Tag phổ biến</h2>
+                    <h2>
+                        <i class="fas fa-tags"></i> Tag phổ biến</h2>
                 </div>
                 <div class="tag__keyword">
                     <a href="">Javascript</a>
@@ -422,6 +505,8 @@
             </ul>
         </div>
     </footer>
+
+    <script src="js/script.js"></script>
 </body>
 
 </html>
