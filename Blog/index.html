@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="scss/style.css">
+    <link rel="stylesheet" href="scss/header.css">
+    <link rel="stylesheet" href="scss/form-login.css">
+    <link rel="stylesheet" href="scss/main.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe"
         crossorigin="anonymous"></script>
     <title>Blog</title>
@@ -67,7 +70,7 @@
                     </div>
                 </div>
                 <div class="in__content__in" id="in__content__in">
-                    <h4>Đăng nhập để chia sẻ và học hỏi một cách dễ dàng cùng hàng ngàn người khác</h4>
+                    <h5>Đăng nhập để chia sẻ và học hỏi một cách dễ dàng cùng hàng ngàn người khác</h5>
                     <form action="">
                         <input type="text" placeholder="User name">
                         <input type="password" placeholder="Passwords">
@@ -76,18 +79,19 @@
                     </form>
                 </div>
                 <div style="display: none;" class="in__content__up" id="in__content__up">
-                    <h4>Đăng nhập để chia sẻ và học hỏi một cách dễ dàng cùng hàng ngàn người khác</h4>
+                    <h5>Tham gia Techmaster Blog để chia sẻ và học hỏi một cách dễ dàng cùng hàng ngàn người khác</h5>
                     <form action="">
                         <input type="text" placeholder="Tên đăng nhập">
                         <input type="text" placeholder="Email">
                         <input type="password" placeholder="Passwords">
                         <input type="password" placeholder="Nhập lại passwords">
-
                         <div class="rules-check">
-                            <input type="checkbox">
-                            <span>Đồng ý với
-                                <a href="">điều khoản sử dụng</a>
-                            </span>
+                            <input type="checkbox" id="check-registration">
+                            <label for="check-registration">
+                                <span>Đồng ý với
+                                    <a href="">điều khoản sử dụng</a>
+                                </span>
+                            </label>
                         </div>
 
                         <button type="submit">Đăng ký</button>
@@ -168,7 +172,7 @@
             </div>
             <div class="posts">
                 <div class="posts__avatar">
-                    <img src="images/avatar.jpg" alt="">
+                    <img src="images/avatar1.jpg" alt="">
                 </div>
                 <div class="posts__detail">
                     <div class="posts__detail__title">
@@ -226,7 +230,7 @@
 
             <div class="posts">
                 <div class="posts__avatar">
-                    <img src="images/avatar.jpg" alt="">
+                    <img src="images/avatar2.jpg" alt="">
                 </div>
                 <div class="posts__detail">
                     <div class="posts__detail__title">
@@ -283,14 +287,13 @@
 
             <div class="posts">
                 <div class="posts__avatar">
-                    <img src="images/avatar.jpg" alt="">
+                    <img src="images/avatar3.jpg" alt="">
                 </div>
                 <div class="posts__detail">
                     <div class="posts__detail__title">
                         <div>
                             <h3>
-                                <a href="">Google cách học tốt tiếng anh thì ra hàng đống kết quả nhưng đảm bảo không có cái nào dùng
-                                    được (nếu dùng được thì bạn đã tiến bộ rồi phải không). ... Mòe viết 25 ngày trước</a>
+                                <a href="">Sử dụng Cookie Authentication trong ASP.NET Core</a>
                             </h3>
                         </div>
                         <div>
@@ -341,14 +344,13 @@
 
             <div class="posts">
                 <div class="posts__avatar">
-                    <img src="images/avatar.jpg" alt="">
+                    <img src="images/avatar4.jpg" alt="">
                 </div>
                 <div class="posts__detail">
                     <div class="posts__detail__title">
                         <div>
                             <h3>
-                                <a href="">Tiêu đề bài viếtTiêu đề bài viếtTiêu đề bài viếtTiêu đề bài viếtTiêu đề bài viếtTiêu đề bài
-                                    viếtTiêu đề bài viết</a>
+                                <a href="">Cách viết specs document cơ bản và 7 technique để viết document rõ ràng, dễ hiểu</a>
                             </h3>
                         </div>
                         <div>
@@ -389,7 +391,8 @@
                     </div>
                     <div class="posts__detail__content">
                         <p>Create a basic horizontal navigation bar with a dark background color and change the background color
-                            of the links when the user moves the mouse over them</p>
+                            of the links when the user moves the mouse over tion bar with a dark background color and change
+                            the background color of the links when the user moves the mouse ovethem</p>
                     </div>
                     <div class="posts__detail__time">
                         <p>Nguyễn văn A viết 1 ngày trước</p>
@@ -399,13 +402,13 @@
 
             <div class="posts">
                 <div class="posts__avatar">
-                    <img src="images/avatar.jpg" alt="">
+                    <img src="images/avatar1.jpg" alt="">
                 </div>
                 <div class="posts__detail">
                     <div class="posts__detail__title">
                         <div>
                             <h3>
-                                <a href="">Tiêu đề bài viết</a>
+                                <a href="">Xây dựng ứng dụng chat Laravel</a>
                             </h3>
                         </div>
                         <div>
@@ -445,8 +448,8 @@
                         </ul>
                     </div>
                     <div class="posts__detail__content">
-                        <p>Create a basic horizontal navigation bar with a dark background color and change the background color
-                            of the links when the user moves the mouse over them</p>
+                        <p>Create a basir with a dark background color and change the background color of the links when the
+                            user moves the mouse over them</p>
                     </div>
                     <div class="posts__detail__time">
                         <p>Nguyễn văn A viết 1 ngày trước</p>
@@ -460,64 +463,66 @@
                     <h2>
                         <i class="fas fa-trophy"></i> Tác giả nổi bật</h2>
                 </div>
-                <div class="author-user">
-                    <div class="author-user__avatar">
-                        <a href="">
-                            <img src="images/avatar2.jpg" alt="">
-                        </a>
+                <div class="author__content">
+                    <div class="author-user">
+                        <div class="author-user__avatar">
+                            <a href="">
+                                <img src="images/avatar2.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="author-user__name">
+                            <p>
+                                <a href="">Nguyễn Anh Thành</a>
+                            </p>
+                        </div>
                     </div>
-                    <div class="author-user__name">
-                        <p>
-                            <a href="">Nguyen van A</a>
-                        </p>
+                    <div class="author-user">
+                        <div class="author-user__avatar">
+                            <a href="">
+                                <img src="images/avatar1.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="author-user__name">
+                            <p>
+                                <a href="">Nguyễn Thị Ánh Kim Lung Linh Ánh Nắng</a>
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="author-user">
-                    <div class="author-user__avatar">
-                        <a href="">
-                            <img src="images/avatar2.jpg" alt="">
-                        </a>
+                    <div class="author-user">
+                        <div class="author-user__avatar">
+                            <a href="">
+                                <img src="images/avatar.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="author-user__name">
+                            <p>
+                                <a href="">Lò Văn Mượt</a>
+                            </p>
+                        </div>
                     </div>
-                    <div class="author-user__name">
-                        <p>
-                            <a href="">Nguyen van A</a>
-                        </p>
+                    <div class="author-user">
+                        <div class="author-user__avatar">
+                            <a href="">
+                                <img src="images/avatar3.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="author-user__name">
+                            <p>
+                                <a href="">Bây Giờ Còn Chưa Nghĩ Ra Cái Tên Nào Dài Hơn Cái Tên Này Nữa</a>
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="author-user">
-                    <div class="author-user__avatar">
-                        <a href="">
-                            <img src="images/avatar2.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="author-user__name">
-                        <p>
-                            <a href="">Nguyen van A</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="author-user">
-                    <div class="author-user__avatar">
-                        <a href="">
-                            <img src="images/avatar2.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="author-user__name">
-                        <p>
-                            <a href="">Nguyen van A</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="author-user">
-                    <div class="author-user__avatar">
-                        <a href="">
-                            <img src="images/avatar2.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="author-user__name">
-                        <p>
-                            <a href="">Nguyen van A</a>
-                        </p>
+                    <div class="author-user">
+                        <div class="author-user__avatar">
+                            <a href="">
+                                <img src="images/avatar4.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="author-user__name">
+                            <p>
+                                <a href="">Tiểu Thị Mai Trung Trinh Liệt Sĩ</a>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -528,15 +533,15 @@
                 </div>
                 <div class="tag__keyword">
                     <a href="">Javascript</a>
+                    <a href="">HTML</a>
+                    <a href="">Font</a>
+                    <a href="">NodeJs</a>
+                    <a href="">Java</a>
+                    <a href="">CSS</a>
                     <a href="">Javascript</a>
-                    <a href="">Javascript</a>
-                    <a href="">Javascript</a>
-                    <a href="">Javascript</a>
-                    <a href="">Javascript</a>
-                    <a href="">Javascript</a>
-                    <a href="">Javascript</a>
-                    <a href="">Javascript</a>
-                    <a href="">Javascript</a>
+                    <a href="">Vuejs</a>
+                    <a href="">Bootstrap</a>
+                    <a href="">Mouse</a>
                 </div>
             </div>
         </aside>
