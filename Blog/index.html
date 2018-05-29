@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="scss/style.css">
-    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe"
         crossorigin="anonymous"></script>
     <title>Blog</title>
@@ -27,15 +26,10 @@
                 </div>
             </div>
             <div class="header__sign">
-                <ul>
-                    <li>
-                        <i class="fas fa-sign-out-alt"></i>
-                        <button id="btn-in">Sign in</button>
-                    </li>
-                    <li>
-                        <button id="btn-up"> Sign up</button>
-                    </li>
-                </ul>
+                <p>
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span id="btn-in">Đăng nhập / Đăng ký</span>
+                </p>
             </div>
         </article>
         <div class="banner">
@@ -56,9 +50,62 @@
         </nav>
     </header>
 
- 
+    <div id="modal_in_up">
+        <aside id="modal-login">
+            <button class="close-in">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal__in">
+                <div class="in__header">
+                    <div class="login__tab">
+                        <div>
+                            <h3 id="login-blog">Đăng nhập</h3>
+                        </div>
+                        <div>
+                            <h3 id="registration-blog">Đăng ký</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="in__content__in" id="in__content__in">
+                    <h4>Đăng nhập để chia sẻ và học hỏi một cách dễ dàng cùng hàng ngàn người khác</h4>
+                    <form action="">
+                        <input type="text" placeholder="User name">
+                        <input type="password" placeholder="Passwords">
+                        <a class="forget-pass" href="">Quên mật khẩu?</a>
+                        <button type="submit">Đăng nhập</button>
+                    </form>
+                </div>
+                <div style="display: none;" class="in__content__up" id="in__content__up">
+                    <h4>Đăng nhập để chia sẻ và học hỏi một cách dễ dàng cùng hàng ngàn người khác</h4>
+                    <form action="">
+                        <input type="text" placeholder="Tên đăng nhập">
+                        <input type="text" placeholder="Email">
+                        <input type="password" placeholder="Passwords">
+                        <input type="password" placeholder="Nhập lại passwords">
 
+                        <div class="rules-check">
+                            <input type="checkbox">
+                            <span>Đồng ý với
+                                <a href="">điều khoản sử dụng</a>
+                            </span>
+                        </div>
 
+                        <button type="submit">Đăng ký</button>
+                    </form>
+                </div>
+                <div class="in__footer">
+                    <span class="in__horizontal"></span>
+                    <span class="in__between">Hoặc</span>
+                    <span class="in__horizontal"></span>
+                </div>
+                <div class="in__icons">
+                    <i class="fab fa-2x fa-facebook-f"></i>
+                    <i class="fab fa-2x fa-twitter"></i>
+                    <i class="fab fa-2x fa-github"></i>
+                </div>
+            </div>
+        </aside>
+    </div>
 
 
     <section class="main-content">
@@ -127,7 +174,8 @@
                     <div class="posts__detail__title">
                         <div>
                             <h3>
-                                <a href="">Tại sao các công ty không gửi mail báo "rớt" cho bạn là những công ty có HR tệ nhất quả đất? </a>
+                                <a href="">Tại sao các công ty không gửi mail báo "rớt" cho bạn là những công ty có HR tệ nhất quả đất?
+                                </a>
                             </h3>
                         </div>
                         <div>
@@ -241,8 +289,8 @@
                     <div class="posts__detail__title">
                         <div>
                             <h3>
-                                <a href="">Google cách học tốt tiếng anh thì ra hàng đống kết quả nhưng đảm bảo không có cái nào dùng được (nếu dùng được thì bạn đã tiến bộ rồi phải không). ...
-                                        Mòe viết 25 ngày trước</a>
+                                <a href="">Google cách học tốt tiếng anh thì ra hàng đống kết quả nhưng đảm bảo không có cái nào dùng
+                                    được (nếu dùng được thì bạn đã tiến bộ rồi phải không). ... Mòe viết 25 ngày trước</a>
                             </h3>
                         </div>
                         <div>
@@ -299,7 +347,8 @@
                     <div class="posts__detail__title">
                         <div>
                             <h3>
-                                <a href="">Tiêu đề bài viếtTiêu đề bài viếtTiêu đề bài viếtTiêu đề bài viếtTiêu đề bài viếtTiêu đề bài viếtTiêu đề bài viết</a>
+                                <a href="">Tiêu đề bài viếtTiêu đề bài viếtTiêu đề bài viếtTiêu đề bài viếtTiêu đề bài viếtTiêu đề bài
+                                    viếtTiêu đề bài viết</a>
                             </h3>
                         </div>
                         <div>
@@ -505,7 +554,6 @@
             </ul>
         </div>
     </footer>
-
     <script src="js/script.js"></script>
 </body>
 

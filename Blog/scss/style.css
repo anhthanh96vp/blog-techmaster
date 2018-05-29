@@ -13,7 +13,38 @@
   width: 100%;
 }
 
+* input {
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  transition: border-color 0.15s;
+}
+
+* button {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: color 0.15s;
+  background: #dc3545;
+  color: white;
+}
+
 * body {
+  position: relative;
   max-width: 1140px;
   margin: 0 auto;
 }
@@ -40,33 +71,6 @@
 
 * body .header__logo__seach input {
   width: 100%;
-  padding: 0.375rem 0.75rem;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #495057;
-  background-color: #fff;
-  background-clip: padding-box;
-  border: 1px solid #ced4da;
-  transition: border-color 0.15s;
-}
-
-* body .header__logo__seach button {
-  display: inline-block;
-  font-weight: 400;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  border: 1px solid transparent;
-  padding: 0.375rem 0.75rem;
-  font-size: 1rem;
-  line-height: 1.5;
-  transition: color 0.15s;
-  background: #dc3545;
-  color: white;
 }
 
 * body .header__sign ul li {
@@ -74,7 +78,7 @@
   padding-left: 15px;
 }
 
-* body .header__sign ul li button {
+* body .header__sign ul li span {
   font-size: 17px;
 }
 
@@ -115,7 +119,7 @@
 }
 
 * body .content .posts__avatar {
-  width: 18%;
+  width: 13%;
   padding: 15px 15px 15px 15px;
 }
 
@@ -124,6 +128,7 @@
 }
 
 * body .content .posts__detail {
+  width: 87%;
   padding: 15px 15px 15px 15px;
 }
 
@@ -246,6 +251,118 @@
   font-weight: bold;
 }
 
+* body #modal_in_up {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: rgba(93, 93, 93, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+* body #modal_in_up #modal-login {
+  border-radius: 10px;
+  position: fixed;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  background: white;
+  transform: translate(-50%, -50%);
+}
+
+* body #modal_in_up #modal-login .close-in {
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-radius: 0px 10px 0px 10px;
+}
+
+* body #modal_in_up #modal-login .modal__in {
+  margin: 30px 30px;
+}
+
+* body #modal_in_up #modal-login .modal__in .login__tab {
+  display: flex;
+  justify-content: space-around;
+  height: 60px;
+  align-items: center;
+}
+
+* body #modal_in_up #modal-login .modal__in .in__content__in {
+  padding: 10px 20px;
+}
+
+* body #modal_in_up #modal-login .modal__in .in__content__in .forget-pass {
+  text-align: right;
+  padding-top: 15px;
+  display: block;
+  height: 30px;
+}
+
+* body #modal_in_up #modal-login .modal__in .in__content__in input {
+  margin-top: 15px;
+  width: 100%;
+}
+
+* body #modal_in_up #modal-login .modal__in .in__content__in button {
+  margin: 30px 0px;
+  width: 100%;
+}
+
+* body #modal_in_up #modal-login .modal__in .in__content__in .rules-check input {
+  width: auto;
+}
+
+* body #modal_in_up #modal-login .modal__in .in__content__up {
+  padding: 10px 20px;
+}
+
+* body #modal_in_up #modal-login .modal__in .in__content__up .forget-pass {
+  text-align: right;
+  padding-top: 15px;
+  display: block;
+  height: 30px;
+}
+
+* body #modal_in_up #modal-login .modal__in .in__content__up input {
+  margin-top: 15px;
+  width: 100%;
+}
+
+* body #modal_in_up #modal-login .modal__in .in__content__up button {
+  margin: 30px 0px;
+  width: 100%;
+}
+
+* body #modal_in_up #modal-login .modal__in .in__content__up .rules-check input {
+  width: auto;
+}
+
+* body #modal_in_up #modal-login .modal__in .in__footer {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+* body #modal_in_up #modal-login .modal__in .in__footer .in__horizontal {
+  flex: 1;
+  height: 1px;
+  background-color: #d6d6d7;
+}
+
+* body #modal_in_up #modal-login .modal__in .in__footer .in__between {
+  padding: 0 15px;
+}
+
+* body #modal_in_up #modal-login .modal__in .in__icons {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  justify-content: space-evenly;
+}
+
 @media only screen and (max-width: 768px) {
   body .content {
     width: 100%;
@@ -257,7 +374,10 @@
 
 @media only screen and (max-width: 600px) {
   body .content .posts__avatar {
-    width: 50%;
+    width: 23%;
+  }
+  body .content .posts__detail {
+    width: 77%;
   }
   body footer {
     display: inline;
