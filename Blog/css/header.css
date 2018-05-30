@@ -13,29 +13,33 @@
   align-items: center;
 }
 .logo__image {
-  width: 30%;
+  width: 25%;
 }
 .logo__seach {
-  width: 70%;
+  width: 75%;
   padding-left: 15px;
   display: flex;
 }
-.logo-seach input {
+.logo__seach input {
   width: 100%;
 }
 .sign {
-  width: 40%;
   display: flex;
   text-align: right;
 }
+.seach__collapse, .logo__seach__collapse {
+  display: none;
+}
 .sign span {
     cursor: pointer;
+    font-size: 15px;
 }
 
 /* ----------------------------------BANNER--------------------------- */
 
 .banner img {
   display: block;
+  max-height: 200px;
 }
 
 /* ------------------------NAV---------------------------------- */
@@ -54,4 +58,38 @@
 
 .nav a {
   color: white;
+}
+
+
+/* ------------------RESPONSIVE------------------ */
+
+@media only screen and (max-width: 600px) {
+  .logo{
+    width: 70%;
+  }
+  .btn-sign-collapse {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .logo {
+    width: 35%;
+  }
+  .logo .logo__image {
+    width: 100%;
+  }
+  .sign {
+    text-align: right;
+    display: inline;
+    width: 35%
+  }
+  .seach__collapse {
+    width: 30%;
+    display: block;
+    padding-left: 50px;
+  }
+  .logo__seach {
+    display: none;
+  }
 }

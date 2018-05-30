@@ -9,7 +9,10 @@
   text-decoration: none;
   color: black;
 }
-
+p {
+  font-size: 15px;
+  color: grey;
+}
 * img {
   width: 100%;
 }

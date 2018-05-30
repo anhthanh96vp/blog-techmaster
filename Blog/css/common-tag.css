@@ -1,0 +1,32 @@
+.common__tag {
+  padding-top: 25px;
+}
+
+.common__tag .common__tag__title {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.common__tag .common__tag__keyword {
+  text-align: left;
+  padding: 25px 25px 0px 25px;
+}
+.common__tag .common__tag__keyword a {
+  margin: 1px 1px;
+  display: inline-block;
+
+}
+.common__tag .common__tag__keyword a span {
+  display: inline-block;
+  padding: 5px;
+  color: white;
+}
+.keyword__post {
+  border-radius: 5px 0 0 5px;
+  background: #8bc1b0;
+}
+.keyword__number {
+  border-radius: 0 5px 5px 0;
+  background: #5488c7;
+}

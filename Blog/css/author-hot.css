@@ -1,3 +1,6 @@
+.author {
+  padding-left: 10px;
+}
 .author__hot__title {
     height: 60px;
     align-items: center;
@@ -13,16 +16,17 @@
   }
   
   .author__user__avatar {
-    width: 20%;
+    width: 30%;
     padding-left: 15px;
   }
-  
+  .author__user__avatar img {
+    border-radius: 50%;
+  }
   .author__user__name {
-    width: 80%;
+    width: 70%;
     padding-left: 15px;
-    font-size: 15px;
   }
-  
+
   .author__user__name a {
     color: grey;
   }

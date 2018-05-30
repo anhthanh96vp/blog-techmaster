@@ -1,0 +1,23 @@
+footer {
+  display: flex;
+  height: 60px;
+  justify-content: space-around;
+  align-items: center;
+}
+footer .address li {
+  display: inline-block;
+  padding-right: 10px;
+  font-weight: bold;
+}
+
+/* ----------------RESPONSIVE---------------- */
+
+@media only screen and (max-width: 420px) {
+  body footer {
+    display: inline;
+    text-align: center;
+  }
+  body footer .address {
+    padding: 10px 0px 7px 0px;
+  }
+}

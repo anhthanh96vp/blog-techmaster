@@ -23,7 +23,7 @@
   top: 0;
 }
 .login__handling {
-  margin: 30px 30px;
+  margin: 30px 0;
 }
 .login__handling .login__tab {
   display: flex;
@@ -93,4 +93,13 @@
   align-items: center;
   height: 60px;
   justify-content: space-evenly;
+}
+
+/* -------------RESPONSIVE------------- */
+
+
+@media only screen and (max-width: 600px) {
+  #login #login__main {
+    width: 100%;
+  }
 }
