@@ -1,4 +1,4 @@
-// -----------------HEADER-------------------
+ /* ----------------------------HEADER---------------------------------- */
 .header {
   padding: 0px 15px 0px 15px;
   display: flex;
@@ -8,11 +8,15 @@
   height: 60px;
 }
 .logo {
+  width: 60%;
   display: flex;
   align-items: center;
 }
+.logo__image {
+  width: 30%;
+}
 .logo__seach {
-  width: 100%;
+  width: 70%;
   padding-left: 15px;
   display: flex;
 }
@@ -20,18 +24,21 @@
   width: 100%;
 }
 .sign {
-  span {
+  width: 40%;
+  display: flex;
+  text-align: right;
+}
+.sign span {
     cursor: pointer;
-  }
 }
 
-//-------------------BANNER------------
+/* ----------------------------------BANNER--------------------------- */
 
 .banner img {
   display: block;
 }
 
-//----------------NAV---------------
+/* ------------------------NAV---------------------------------- */
 .nav {
   background: #9a9c9e;
   height: 50px;
@@ -47,20 +54,4 @@
 
 .nav a {
   color: white;
-}
-
-
-
-footer {
-  display: flex;
-  height: 60px;
-  justify-content: space-around;
-  align-items: center;
-  .address {
-    li {
-      display: inline-block;
-      padding-right: 10px;
-      font-weight: bold;
-    }
-  }
 }

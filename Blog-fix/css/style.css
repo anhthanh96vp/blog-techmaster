@@ -1,0 +1,52 @@
+.main-content {
+  display: flex;
+  flex-direction: row;
+}
+.content {
+  width: 70%;
+}
+.author {
+  width: 30%;
+}
+
+
+@media only screen and (max-width: 768px) {
+  body .content {
+    width: 100%;
+  }
+  .author {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  body .content .posts__avatar {
+    width: 23%;
+  }
+  body .content .posts__detail {
+    width: 77%;
+  }
+  body #modal_in_up #modal-login {
+    width: 100%;
+  }
+  body footer {
+    display: inline;
+    text-align: center;
+  }
+  body footer .address {
+    padding: 10px 0px 7px 0px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  body .content .posts__avatar {
+    width: 30%;
+  }
+  body .content .posts__detail {
+    width: 70%;
+  }
+  body .content .posts__detail__title {
+    display: inline-block;
+  }
+}
+/*# sourceMappingURL=main.css.map */

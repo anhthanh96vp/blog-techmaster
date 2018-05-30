@@ -1,0 +1,11 @@
+footer {
+  display: flex;
+  height: 60px;
+  justify-content: space-around;
+  align-items: center;
+}
+footer .address li {
+      display: inline-block;
+      padding-right: 10px;
+      font-weight: bold;
+}

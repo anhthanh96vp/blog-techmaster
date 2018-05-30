@@ -1,6 +1,6 @@
-var btn_in = document.getElementById('btn-in');
-var modal_login = document.getElementById('modal_in_up');
-var close_in = document.getElementsByClassName('close-in')[0];
+var btn_in = document.getElementById('btn-sign');
+var modal_login = document.getElementById('login');
+var close_in = document.getElementsByClassName('login__close')[0];
 
 
 btn_in.addEventListener('click', openModal);
@@ -20,10 +20,10 @@ function outsideClick(e){
 }
 
 
-var btn_tab_login = document.getElementById('login-blog');
-var btn_tab_registration = document.getElementById('registration-blog');
-var modal_tab_login = document.getElementById('in__content__in');
-var modal_tab_registration = document.getElementById('in__content__up');
+var btn_tab_login = document.getElementById('sign-in-blog');
+var btn_tab_registration = document.getElementById('sign-up-blog');
+var modal_tab_login = document.getElementById('sign__in__content');
+var modal_tab_registration = document.getElementById('sign__up__content');
 
 btn_tab_login.addEventListener('click', openLogin);
 btn_tab_registration.addEventListener('click', openRegistration);
