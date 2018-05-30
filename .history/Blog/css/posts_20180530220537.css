@@ -47,9 +47,6 @@
   margin: 1px;
   font-size: 13px;
 }
-.posts__detail__tag li a:hover {
-  background: grey;
-}
 .posts__detail__time {
   padding-top: 20px;
   text-align: right;

@@ -40,15 +40,12 @@
 }
 .posts__detail__tag li a {
   color: white;
-  background: #9a9a9a;
+  background: grey;
   padding: 5px;
   border-radius: 5px;
   display: inline-block;
   margin: 1px;
   font-size: 13px;
-}
-.posts__detail__tag li a:hover {
-  background: grey;
 }
 .posts__detail__time {
   padding-top: 20px;
