@@ -5,19 +5,25 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-* a {
+body {
+  position: relative;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+a {
   text-decoration: none;
   color: black;
 }
 p {
   font-size: 15px;
-  color: grey;
+  color: black;
 }
-* img {
+img {
   width: 100%;
 }
 
-* input {
+input {
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   line-height: 1.5;
@@ -28,7 +34,7 @@ p {
   transition: border-color 0.15s;
 }
 
-* button {
+button {
   display: inline-block;
   font-weight: 400;
   text-align: center;
@@ -48,8 +54,27 @@ p {
   cursor: pointer;
 }
 
-body {
-  position: relative;
-  max-width: 1140px;
-  margin: 0 auto;
+.tooltiptext {
+  visibility: hidden;
+  width: 100px;
+  background-color: #887979;
+  color: #fff;
+  text-align: center;
+  border-radius: 3px;
+  padding: 4px 0;
+  position: absolute;
+  z-index: 1;
+  top: 150%;
+  left: 50%;
+  margin-left: -53px;
+}
+ .tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #887979 transparent;
 }

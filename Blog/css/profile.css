@@ -1,0 +1,10 @@
+.profile {
+    display: flex;
+    max-height: 300px;
+}
+.profile__avatar {
+    width: 25%;
+}
+.profile__user {
+    width: 25%;
+}

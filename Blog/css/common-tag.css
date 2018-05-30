@@ -1,5 +1,5 @@
 .common__tag {
-  padding-top: 25px;
+  padding: 50px 0 25px 0;
 }
 
 .common__tag .common__tag__title {
@@ -30,4 +30,9 @@
   border-radius: 0 5px 5px 0;
   background: #5488c7;
   margin-left: -5px;
+}
+
+.common__tag__all {
+  padding: 35px 0 0 25px;
+  text-align: left;
 }

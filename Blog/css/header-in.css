@@ -1,0 +1,113 @@
+ /* ----------------------------HEADER---------------------------------- */
+ .header {
+    padding: 0px 15px 0px 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+  }
+  .logo {
+    width: 60%;
+    display: flex;
+    align-items: center;
+  }
+  .logo__image {
+    width: 25%;
+  }
+  .logo__seach {
+    width: 75%;
+    padding-left: 15px;
+    display: flex;
+  }
+  .logo__seach input {
+    width: 100%;
+  }
+  .seach__collapse, .logo__seach__collapse {
+    display: none;
+  }
+
+
+  .sign {
+    display: flex;
+    width: 40%;
+    justify-content: flex-end;
+  }
+ .sign .sign__icons {
+     padding-left: 30px;
+     position: relative;
+     cursor: pointer;
+ }
+ .sign .sign__icons .svg-inline--fa  {
+    font-size: 25px;
+ }
+
+.sign__icons .dropdown__content {
+    position: absolute;
+    top: 40px;
+    list-style-type: none;
+    display: none;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.sign__icons .dropdown__content li {
+    padding: 10px 10px;
+}
+
+.sign__icons:active .dropdown__content {
+    display: block;
+}
+
+  /* ------------------------NAV---------------------------------- */
+  .nav {
+    background: #9a9c9e;
+    height: 50px;
+    align-items: center;
+    display: flex;
+  }
+  .nav li {
+    display: inline;
+    font-size: 20px;
+    padding-left: 15px;
+    font-weight: bold;
+  }
+  
+  .nav a {
+    color: white;
+  }
+  
+  
+  /* ------------------RESPONSIVE------------------ */
+  
+  @media only screen and (max-width: 600px) {
+    .logo{
+      width: 70%;
+    }
+    .btn-sign-collapse {
+      display: none;
+    }
+  }
+  
+  @media only screen and (max-width: 420px) {
+    .logo {
+      width: 35%;
+    }
+    .logo .logo__image {
+      width: 100%;
+    }
+    .sign {
+      text-align: right;
+      display: inline;
+      width: 35%
+    }
+    .seach__collapse {
+      width: 30%;
+      display: block;
+      padding-left: 50px;
+    }
+    .logo__seach {
+      display: none;
+    }
+  }

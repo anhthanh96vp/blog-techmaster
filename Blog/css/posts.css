@@ -53,10 +53,15 @@
 .posts__detail__time {
   padding-top: 20px;
   text-align: right;
+}
+.posts__detail__time p {
   font-size: 15px;
   color: grey;
 }
-
+.posts__next button {
+  width: 100%;
+  background: grey;
+}
 /* -------------RESPONSIVE------------- */
 
 
