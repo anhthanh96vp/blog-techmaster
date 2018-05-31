@@ -1,11 +1,33 @@
 .profile {
     display: flex;
-    max-height: 250px;
-    width: 50%;
+   height: 220px;
+    width: 60%;
+    align-items: center;
 }
 .profile__avatar {
-    width: 25%;
+    width: 20%;
+    margin: 0 20px 0 10px;
 }
 .profile__user {
+    width: 50%;
+    text-align: center;
+}
+.profile__user .profile__user__name {
+    padding: 15px 0 15px 0;
+}
+.profile__user .profile__user__follow button {
+    width: 60%;
+}
+.profile__user .profile__user__icons {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 15px 0 15px 0;;
+}
+.profile__work  {
     width: 25%;
+    display: flex;
+    flex-direction: column;
+}
+.profile__work p {
+    padding-bottom: 12px;
 }

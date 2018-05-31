@@ -1,0 +1,19 @@
+.content {
+  width: 72%;
+  border-right: 1px solid #f3f1f1;
+}
+/* .posts .posts__icons__block {
+  display: none;
+}
+.posts:hover .posts__icons__block {
+  display: block;
+}
+.posts:hover .posts__icons__none {
+  display: none;
+} */
+
+@media only screen and (max-width: 768px) {
+  body .content {
+    width: 100%;
+  }
+}

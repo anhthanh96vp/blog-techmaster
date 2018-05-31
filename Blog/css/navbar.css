@@ -1,0 +1,17 @@
+/* ------------------------NAV---------------------------------- */
+.nav {
+  background: #9a9c9e;
+  height: 50px;
+  align-items: center;
+  display: flex;
+}
+.nav li {
+  display: inline;
+  font-size: 20px;
+  padding-left: 15px;
+  font-weight: bold;
+}
+
+.nav a {
+  color: white;
+}
