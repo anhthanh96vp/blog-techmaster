@@ -8,6 +8,10 @@
     width: 20%;
     margin: 0 20px 0 10px;
 }
+.profile__avatar img {
+    border-radius: 50%;
+    border: 1px solid #f5e8e8;
+}
 .profile__user {
     width: 50%;
     text-align: center;
@@ -31,3 +35,11 @@
 .profile__work p {
     padding-bottom: 12px;
 }
+
+
+@media only screen and (max-width: 600px) {
+    .welcome {
+      width: 100%;
+    }
+  }
+  

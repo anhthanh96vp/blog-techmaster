@@ -38,6 +38,9 @@
   position: relative;
   cursor: pointer;
 }
+.sign__icons button {
+  border-radius: 20%;
+}
 .sign .sign__icons .svg-inline--fa {
   font-size: 25px;
 }
