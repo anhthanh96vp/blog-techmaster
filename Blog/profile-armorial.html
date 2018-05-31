@@ -39,24 +39,30 @@
             </div>
             <div class="sign">
                 <div class="sign__icons sign__write">
-                    <i class="fas fa-edit"></i>
-                    <ul class="dropdown__content">
+                    <button class="btn__drop" onclick="dropDown('drop__write')">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                    <ul id="drop__write" class="dropdown__content">
                         <li>321321321</li>
                         <li>321321321</li>
                         <li>321321321</li>
                     </ul>
                 </div>
                 <div class="sign__icons sign__notify">
-                    <i class="fas fa-bell"></i>
-                    <ul class="dropdown__content">
+                    <button class="btn__drop" onclick="dropDown('drop__notify')">
+                        <i class="fas fa-bell"></i>
+                    </button>
+                    <ul id="drop__notify" class="dropdown__content">
                         <li>aaaaa</li>
                         <li>321321321</li>
                         <li>321321321</li>
                     </ul>
                 </div>
                 <div class="sign__icons sign__user">
-                    <i class="fas fa-user"></i>
-                    <ul class="dropdown__content">
+                    <button class="btn__drop" onclick="dropDown('drop__user')">
+                        <i class="fas fa-user"></i>
+                    </button>
+                    <ul id="drop__user" class="dropdown__content">
                         <li>321321321</li>
                         <li>321321321</li>
                         <li>321321321</li>
@@ -131,6 +137,22 @@
             </ul>
         </div>
     </footer>
+    <script>
+        function dropDown(zx) {
+            document.getElementById(zx).classList.toggle("show");
+        }
+        window.onclick = function (event) {
+            if (!event.target.matches('.btn__drop')) {
+                var dropdowns = document.getElementsByClassName("dropdown__content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
     <!-- <script src="js/form-login.js"></script>
     <script src="js/welcome-popup.js"></script> -->
 </body>

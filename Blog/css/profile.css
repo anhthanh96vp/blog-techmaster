@@ -1,6 +1,7 @@
 .profile {
     display: flex;
-    max-height: 300px;
+    max-height: 250px;
+    width: 50%;
 }
 .profile__avatar {
     width: 25%;
