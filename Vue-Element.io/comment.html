@@ -87,6 +87,9 @@
             display: inline;
             padding-right: 10px;
         }
+        .hidden__comment {
+            display: none;
+        }
     </style>
 </head>
 
@@ -138,7 +141,7 @@
                         <el-button type="info" plain @click="addComment">Posts</el-button>
                     </div>
                 </div>
-                <div class="comment__show" v-for="comment in comments">
+                <div class="comment__show" v-for="(comment, index) in comments">
                     <el-row class="show__up" type="flex" justify="around" :gutter="20">
                         <el-col :span="4">
                             <div class="show__avatar">
@@ -150,6 +153,7 @@
                                 <span class="comment__name">{{comment.name}}</span>
                                 <span class="comment__time">1 giờ trước</span>
                                 <p class="comment__main"> {{comment.content}}
+
                                 </p>
                             </div>
                             <ul class="comment__positive">
@@ -157,15 +161,15 @@
                                     <a href="">Thích</a>
                                 </li>
                                 <li>
-                                    <a href="">Trả lời</a>
+                                    <a @click="hiddenComment(index)">Trả lời</a>
                                 </li>
                                 <li style="float: right">
                                     <i class="fas fa-thumbs-up"></i>
                                     <span>{{comment.like}}</span>
                                 </li>
                             </ul>
-                            <div class="comment_bag" >
-                                <div class="comment__show" v-for="(com, index) in comment.comment_deep">
+                            <div class="comment__bag" >
+                                <div class="comment__show" v-for="com in comment.comment_deep">
                                     <el-row class="show__up" type="flex" justify="around" :gutter="20">
                                         <el-col :span="4">
                                             <div class="show__avatar">
@@ -186,7 +190,7 @@
                                                     <a href="">Thích</a>
                                                 </li>
                                                 <li>
-                                                    <a href="">Trả lời</a>
+                                                    <a @click="hiddenComment(index)">Trả lời</a>
                                                 </li>
                                                 <li style="float: right">
                                                     <i class="fas fa-thumbs-up"></i>
@@ -196,7 +200,7 @@
                                         </el-col>
                                     </el-row>
                                 </div>
-                                <div class="comment__frames">
+                                <div class="comment__frames hidden__comment">
                                     <el-row class="comment__frames__up" type="flex" justify="around" :gutter="20">
                                         <el-col :span="4">
                                             <div class="comment__frames__avatar">
@@ -211,7 +215,7 @@
                                         </el-col>
                                     </el-row>
                                     <div class="comment__frames__btn">
-                                        <el-button type="info" plain @click="replyComment">Posts</el-button>
+                                        <el-button type="info" plain @click="replyComment(index)">Posts</el-button>
                                     </div>
                                 </div>
                             </div> 
@@ -261,8 +265,11 @@
                         this.comments.push({ name: 'Nguyễn Ngọc Anh', like: 0, image: 'http://lh5.googleusercontent.com/-fylZF9ONaQg/WBP6lXY-A9I/AAAAAAABADA/BO_0loTj3u8keNXa4vRShuvvsxmcRBtNQCLcB/s1600/OhGai.Net-0202291016.jpg', content: this.comment__lv1 })
                    }
                 },
-                replyComment: function(){
-                    // this.comments.push({ name: 'Nguyễn Ngọc Anh', like: 0, image: 'http://lh5.googleusercontent.com/-fylZF9ONaQg/WBP6lXY-A9I/AAAAAAABADA/BO_0loTj3u8keNXa4vRShuvvsxmcRBtNQCLcB/s1600/OhGai.Net-0202291016.jpg', content: this.comment__lv1 })
+                replyComment: function(stt){
+                    this.comments[stt].comment_deep.push({ name: 'Nguyễn Ngọc Anh', like: 0, image: 'http://lh5.googleusercontent.com/-fylZF9ONaQg/WBP6lXY-A9I/AAAAAAABADA/BO_0loTj3u8keNXa4vRShuvvsxmcRBtNQCLcB/s1600/OhGai.Net-0202291016.jpg', content: this.comment__lv2 })
+                },
+                hiddenComment: function(stt) {
+                    console.log(stt);
                 }
             }
         })
