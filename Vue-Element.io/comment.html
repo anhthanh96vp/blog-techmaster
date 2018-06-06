@@ -87,8 +87,13 @@
             display: inline;
             padding-right: 10px;
         }
-        .hidden__comment {
+
+        .show__comment {
             display: none;
+        }
+
+        .mouse__cursor {
+            cursor: pointer;
         }
     </style>
 </head>
@@ -133,7 +138,7 @@
                         </el-col>
                         <el-col :span="20">
                             <div class="comment__frames__posts">
-                                <el-input type="textarea" :rows="5" resize="none" placeholder="Bình luận" v-model="comment__lv1">Comment</el-input>
+                                <el-input type="textarea" :rows="5" resize="none" placeholder="Bình luận" v-model.lazy="comment__lv1">Bình luận</el-input>
                             </div>
                         </el-col>
                     </el-row>
@@ -141,7 +146,7 @@
                         <el-button type="info" plain @click="addComment">Posts</el-button>
                     </div>
                 </div>
-                <div class="comment__show" v-for="(comment, index) in comments">
+                <div class="comment__show" v-for="(comment, index1) in comments">
                     <el-row class="show__up" type="flex" justify="around" :gutter="20">
                         <el-col :span="4">
                             <div class="show__avatar">
@@ -158,18 +163,18 @@
                             </div>
                             <ul class="comment__positive">
                                 <li>
-                                    <a href="">Thích</a>
+                                    <a class="mouse__cursor" @click="likeComment(index1)">Thích</a>
                                 </li>
                                 <li>
-                                    <a @click="hiddenComment(index)">Trả lời</a>
+                                    <a class="mouse__cursor" @click="showComment(index1)">Trả lời</a>
                                 </li>
                                 <li style="float: right">
                                     <i class="fas fa-thumbs-up"></i>
                                     <span>{{comment.like}}</span>
                                 </li>
                             </ul>
-                            <div class="comment__bag" >
-                                <div class="comment__show" v-for="com in comment.comment_deep">
+                            <div class="comment__bag">
+                                <div class="comment__show" v-for="(com, index2) in comment.comment_deep">
                                     <el-row class="show__up" type="flex" justify="around" :gutter="20">
                                         <el-col :span="4">
                                             <div class="show__avatar">
@@ -187,10 +192,10 @@
                                             </div>
                                             <ul class="comment__positive">
                                                 <li>
-                                                    <a href="">Thích</a>
+                                                    <a class="mouse__cursor" @click="likeComment_deep(index1, index2)">Thích</a>
                                                 </li>
                                                 <li>
-                                                    <a @click="hiddenComment(index)">Trả lời</a>
+                                                    <a class="mouse__cursor" @click="showComment(index1, com.name)">Trả lời</a>
                                                 </li>
                                                 <li style="float: right">
                                                     <i class="fas fa-thumbs-up"></i>
@@ -200,7 +205,7 @@
                                         </el-col>
                                     </el-row>
                                 </div>
-                                <div class="comment__frames hidden__comment">
+                                <div class="comment__frames show__comment">
                                     <el-row class="comment__frames__up" type="flex" justify="around" :gutter="20">
                                         <el-col :span="4">
                                             <div class="comment__frames__avatar">
@@ -210,15 +215,15 @@
                                         </el-col>
                                         <el-col :span="20">
                                             <div class="comment__frames__posts">
-                                                <el-input type="textarea" resize="none" :autosize="{ minRows: 4.5, maxRows: 6}" placeholder="Binh luan" v-model="comment__lv2">Comment</el-input>
+                                                <el-input type="textarea" resize="none" :autosize="{ minRows: 4.5, maxRows: 6}" placeholder="Binh luan" v-model.lazy="comment__lv2">Bình luận</el-input>
                                             </div>
                                         </el-col>
                                     </el-row>
                                     <div class="comment__frames__btn">
-                                        <el-button type="info" plain @click="replyComment(index)">Posts</el-button>
+                                        <el-button type="info" plain @click="replyComment(index1)">Posts</el-button>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
                         </el-col>
                     </el-row>
                 </div>
@@ -245,7 +250,7 @@
                     {
                         name: 'Nguyễn Ngọc Anh', like: 19, image: 'http://img3.blogtamsu.vn/2017/06/trinh-xiu-blogtamsu-4.jpg', content: 'Bởi chuyện định cho Trung Quốc thuê 99 năm chỉ mới là dự thảo, đến ngày 15/6 Quốc hội sẽ thông qua Luật Đặc khu (Kỳ họp thứ 5, Quốc hội khóa 14). Nếu ngày 15/6 Quốc hội thực sự thông qua điều trên thì chúng ta không còn cơ hội phản đối. Nếu chúng ta lên tiếng phản đối trước 15/6, sẽ không sao cả vì đây chỉ là góp ý trên tinh thần xây dựng. Còn vào 15/6, nếu Quốc hội thông qua điều đó, chúng ta tiếp tục phản đối sẽ bị tội chống đối Nhà nước. Tóm lại là chúng ta còn 14 ngày để kêu gào trước khi quá muộn. Có quá nhiều lý do để phản đối Trung Quốc thuê Vân Đồn 99 năm.',
                         comment_deep: [
-                            { name: 'Tên khác một chút', like: 19, content: 'Bởi chuyệnốc thuê 99 năm chỉ mới là dự thảo' },
+                            { name: 'Tên khác một chút', like: 21, content: 'Bởi chuyệnốc thuê 99 năm chỉ mới là dự thảo' },
                         ]
                     },
                     {
@@ -261,15 +266,28 @@
             },
             methods: {
                 addComment: function () {
-                   if(this.comment__lv1.length != ''){
-                        this.comments.push({ name: 'Nguyễn Ngọc Anh', like: 0, image: 'http://lh5.googleusercontent.com/-fylZF9ONaQg/WBP6lXY-A9I/AAAAAAABADA/BO_0loTj3u8keNXa4vRShuvvsxmcRBtNQCLcB/s1600/OhGai.Net-0202291016.jpg', content: this.comment__lv1 })
-                   }
+                    if (this.comment__lv1.length != '') {
+                        this.comments.push({ name: 'Nguyễn Ngọc Anh', like: 0, image: 'http://lh5.googleusercontent.com/-fylZF9ONaQg/WBP6lXY-A9I/AAAAAAABADA/BO_0loTj3u8keNXa4vRShuvvsxmcRBtNQCLcB/s1600/OhGai.Net-0202291016.jpg', content: this.comment__lv1, comment_deep: [] })
+                    }
                 },
-                replyComment: function(stt){
-                    this.comments[stt].comment_deep.push({ name: 'Nguyễn Ngọc Anh', like: 0, image: 'http://lh5.googleusercontent.com/-fylZF9ONaQg/WBP6lXY-A9I/AAAAAAABADA/BO_0loTj3u8keNXa4vRShuvvsxmcRBtNQCLcB/s1600/OhGai.Net-0202291016.jpg', content: this.comment__lv2 })
+                replyComment: function (index1) {
+                    if (this.comment__lv2.length != '') {
+                        this.comments[index1].comment_deep.push({ name: 'Nguyễn Ngọc Anh', like: 0, image: 'http://lh5.googleusercontent.com/-fylZF9ONaQg/WBP6lXY-A9I/AAAAAAABADA/BO_0loTj3u8keNXa4vRShuvvsxmcRBtNQCLcB/s1600/OhGai.Net-0202291016.jpg', content: this.comment__lv2 });
+                        this.comment__lv2 = '';
+                    }
                 },
-                hiddenComment: function(stt) {
-                    console.log(stt);
+                showComment: function (index1, tagName) {
+                    var textComment = document.getElementsByClassName('show__comment');
+                    textComment[index1].style.display = "block";
+                    if (tagName != undefined) {
+                        textComment[index1].querySelector('textarea').textContent = `@ ${tagName}`;
+                    }
+                },
+                likeComment: function (index1) {
+                    this.comments[index1].like += 1;
+                },
+                likeComment_deep: function (index1, index2) {
+                    this.comments[index1].comment_deep[index2].like += 1;
                 }
             }
         })
