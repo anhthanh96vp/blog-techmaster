@@ -53,7 +53,7 @@
         .comment__frames__avatar,
         .show__avatar {
             text-align: center;
-            padding: 0 13px 13px 13px;
+            padding: 0 10px 10px 0;
         }
 
         .comment__frames__btn {
@@ -95,6 +95,11 @@
         .mouse__cursor {
             cursor: pointer;
         }
+
+        .active__like {
+            color: #365899;
+            font-weight: bold;
+        }
     </style>
 </head>
 
@@ -130,15 +135,15 @@
             <div class="comment__bag">
                 <div class="comment__frames">
                     <el-row class="comment__frames__up" type="flex" justify="around" :gutter="20">
-                        <el-col :span="4">
+                        <el-col :span="3">
                             <div class="comment__frames__avatar">
                                 <img src="http://lh5.googleusercontent.com/-fylZF9ONaQg/WBP6lXY-A9I/AAAAAAABADA/BO_0loTj3u8keNXa4vRShuvvsxmcRBtNQCLcB/s1600/OhGai.Net-0202291016.jpg"
                                     alt="">
                             </div>
                         </el-col>
-                        <el-col :span="20">
+                        <el-col :span="21">
                             <div class="comment__frames__posts">
-                                <el-input type="textarea" :rows="5" resize="none" placeholder="Bình luận" v-model.lazy="comment__lv1">Bình luận</el-input>
+                                <el-input type="textarea" :rows="5" resize="none" placeholder="Bình luận" v-model.lazy="commentLv1">Bình luận</el-input>
                             </div>
                         </el-col>
                     </el-row>
@@ -148,12 +153,12 @@
                 </div>
                 <div class="comment__show" v-for="(comment, index1) in comments">
                     <el-row class="show__up" type="flex" justify="around" :gutter="20">
-                        <el-col :span="4">
+                        <el-col :span="3">
                             <div class="show__avatar">
                                 <img :src="comment.image" alt="">
                             </div>
                         </el-col>
-                        <el-col :span="20">
+                        <el-col :span="21">
                             <div class="show__posts">
                                 <span class="comment__name">{{comment.name}}</span>
                                 <span class="comment__time">1 giờ trước</span>
@@ -163,12 +168,12 @@
                             </div>
                             <ul class="comment__positive">
                                 <li>
-                                    <a class="mouse__cursor" @click="likeComment(index1)">Thích</a>
+                                    <a class="mouse__cursor" :class="{active__like: comment.activeLike}" @click="likeComment(index1)">Thích</a>
                                 </li>
                                 <li>
                                     <a class="mouse__cursor" @click="showComment(index1)">Trả lời</a>
                                 </li>
-                                <li style="float: right">
+                                <li :class="{active__like: comment.activeLike}" style="float: right">
                                     <i class="fas fa-thumbs-up"></i>
                                     <span>{{comment.like}}</span>
                                 </li>
@@ -176,13 +181,13 @@
                             <div class="comment__bag">
                                 <div class="comment__show" v-for="(com, index2) in comment.comment_deep">
                                     <el-row class="show__up" type="flex" justify="around" :gutter="20">
-                                        <el-col :span="4">
+                                        <el-col :span="3">
                                             <div class="show__avatar">
                                                 <img src="http://lh5.googleusercontent.com/-fylZF9ONaQg/WBP6lXY-A9I/AAAAAAABADA/BO_0loTj3u8keNXa4vRShuvvsxmcRBtNQCLcB/s1600/OhGai.Net-0202291016.jpg"
                                                     alt="">
                                             </div>
                                         </el-col>
-                                        <el-col :span="20">
+                                        <el-col :span="21">
                                             <div class="show__posts">
                                                 <span class="comment__name">{{com.name}}</span>
                                                 <span class="comment__time">1 giờ trước</span>
@@ -192,12 +197,12 @@
                                             </div>
                                             <ul class="comment__positive">
                                                 <li>
-                                                    <a class="mouse__cursor" @click="likeComment_deep(index1, index2)">Thích</a>
+                                                    <a :class="{active__like: com.activeLike}" class="mouse__cursor" @click="likeComment_deep(index1, index2)">Thích</a>
                                                 </li>
                                                 <li>
                                                     <a class="mouse__cursor" @click="showComment(index1, com.name)">Trả lời</a>
                                                 </li>
-                                                <li style="float: right">
+                                                <li :class="{active__like: com.activeLike}" style="float: right">
                                                     <i class="fas fa-thumbs-up"></i>
                                                     <span>{{com.like}}</span>
                                                 </li>
@@ -207,15 +212,15 @@
                                 </div>
                                 <div class="comment__frames show__comment">
                                     <el-row class="comment__frames__up" type="flex" justify="around" :gutter="20">
-                                        <el-col :span="4">
+                                        <el-col :span="3">
                                             <div class="comment__frames__avatar">
                                                 <img src="http://lh5.googleusercontent.com/-fylZF9ONaQg/WBP6lXY-A9I/AAAAAAABADA/BO_0loTj3u8keNXa4vRShuvvsxmcRBtNQCLcB/s1600/OhGai.Net-0202291016.jpg"
                                                     alt="">
                                             </div>
                                         </el-col>
-                                        <el-col :span="20">
+                                        <el-col :span="21">
                                             <div class="comment__frames__posts">
-                                                <el-input type="textarea" resize="none" :autosize="{ minRows: 4.5, maxRows: 6}" placeholder="Binh luan" v-model.lazy="comment__lv2">Bình luận</el-input>
+                                                <el-input type="textarea" resize="none" :autosize="{ minRows: 4.5, maxRows: 6}" placeholder="Binh luan" v-model.lazy="commentLv2">Bình luận</el-input>
                                             </div>
                                         </el-col>
                                     </el-row>
@@ -244,50 +249,54 @@
         new Vue({
             el: '#app',
             data: {
-                comment__lv1: '',
-                comment__lv2: '',
+                commentLv1: '',
+                commentLv2: '',
                 comments: [
                     {
-                        name: 'Nguyễn Ngọc Anh', like: 19, image: 'http://img3.blogtamsu.vn/2017/06/trinh-xiu-blogtamsu-4.jpg', content: 'Bởi chuyện định cho Trung Quốc thuê 99 năm chỉ mới là dự thảo, đến ngày 15/6 Quốc hội sẽ thông qua Luật Đặc khu (Kỳ họp thứ 5, Quốc hội khóa 14). Nếu ngày 15/6 Quốc hội thực sự thông qua điều trên thì chúng ta không còn cơ hội phản đối. Nếu chúng ta lên tiếng phản đối trước 15/6, sẽ không sao cả vì đây chỉ là góp ý trên tinh thần xây dựng. Còn vào 15/6, nếu Quốc hội thông qua điều đó, chúng ta tiếp tục phản đối sẽ bị tội chống đối Nhà nước. Tóm lại là chúng ta còn 14 ngày để kêu gào trước khi quá muộn. Có quá nhiều lý do để phản đối Trung Quốc thuê Vân Đồn 99 năm.',
+                        name: 'Nguyễn Ngọc Anh', activeLike: false, like: 19, image: 'http://img3.blogtamsu.vn/2017/06/trinh-xiu-blogtamsu-4.jpg', content: 'Bởi chuyện định cho Trung Quốc thuê 99 năm chỉ mới là dự thảo, đến ngày 15/6 Quốc hội sẽ thông qua Luật Đặc khu (Kỳ họp thứ 5, Quốc hội khóa 14). Nếu ngày 15/6 Quốc hội thực sự thông qua điều trên thì chúng ta không còn cơ hội phản đối. Nếu chúng ta lên tiếng phản đối trước 15/6, sẽ không sao cả vì đây chỉ là góp ý trên tinh thần xây dựng. Còn vào 15/6, nếu Quốc hội thông qua điều đó, chúng ta tiếp tục phản đối sẽ bị tội chống đối Nhà nước. Tóm lại là chúng ta còn 14 ngày để kêu gào trước khi quá muộn. Có quá nhiều lý do để phản đối Trung Quốc thuê Vân Đồn 99 năm.',
                         comment_deep: [
-                            { name: 'Tên khác một chút', like: 21, content: 'Bởi chuyệnốc thuê 99 năm chỉ mới là dự thảo' },
+                            { name: 'Tên khác một chút', activeLike: false, like: 21, content: 'Bởi chuyệnốc thuê 99 năm chỉ mới là dự thảo' },
                         ]
                     },
                     {
-                        name: 'Tống Thiên Trang', like: 23, image: 'https://static1.dienanh.net/upload/2017/11/20/1cee91b5-aabe-439b-8f93-0285f6e7f5f1.jpg', content: 'Việc chăm sóc và nuôi dạy trẻ em ở Việt Nam theo khoa học hiện đại của các bà mẹ trẻ hiện nay khó khăn nhất lại xuất phát từ ...gia đình. Những cô con dâu không làm chủ được kinh tế xui rủi cưới ngay thằng chồng ba phải và gặp bà mẹ chồng bảo thủ thì thật sự là đại họa.',
+                        name: 'Tống Thiên Trang', activeLike: false, like: 23, image: 'https://static1.dienanh.net/upload/2017/11/20/1cee91b5-aabe-439b-8f93-0285f6e7f5f1.jpg', content: 'Việc chăm sóc và nuôi dạy trẻ em ở Việt Nam theo khoa học hiện đại của các bà mẹ trẻ hiện nay khó khăn nhất lại xuất phát từ ...gia đình. Những cô con dâu không làm chủ được kinh tế xui rủi cưới ngay thằng chồng ba phải và gặp bà mẹ chồng bảo thủ thì thật sự là đại họa.',
                         comment_deep: []
                     },
 
                     {
-                        name: 'Lâm Bảo Nhi', like: 129, image: 'http://avatar.nct.nixcdn.com/singer/avatar/2016/09/12/2/e/b/c/1473689429621_600.jpg', content: 'Em có thai với bạn thân rồi, giờ em vừa mừng, vừa lo. Em và thằng bạn thân chơi với nhau từ năm cấp 2, lên cấp 3 chúng em học cùng vẫn học cùng nhau và em phát hiện mình đã thích nó.Nhưng khi ấy nó đang yêu một con bé khoá dưới nên em chỉ biết lơ đi mà làm tròn trách nhiệm của đứa "bạn thân".',
+                        name: 'Lâm Bảo Nhi', activeLike: false, like: 129, image: 'http://avatar.nct.nixcdn.com/singer/avatar/2016/09/12/2/e/b/c/1473689429621_600.jpg', content: 'Em có thai với bạn thân rồi, giờ em vừa mừng, vừa lo. Em và thằng bạn thân chơi với nhau từ năm cấp 2, lên cấp 3 chúng em học cùng vẫn học cùng nhau và em phát hiện mình đã thích nó.Nhưng khi ấy nó đang yêu một con bé khoá dưới nên em chỉ biết lơ đi mà làm tròn trách nhiệm của đứa "bạn thân".',
                         comment_deep: []
                     }
                 ]
             },
             methods: {
                 addComment: function () {
-                    if (this.comment__lv1.length != '') {
-                        this.comments.push({ name: 'Nguyễn Ngọc Anh', like: 0, image: 'http://lh5.googleusercontent.com/-fylZF9ONaQg/WBP6lXY-A9I/AAAAAAABADA/BO_0loTj3u8keNXa4vRShuvvsxmcRBtNQCLcB/s1600/OhGai.Net-0202291016.jpg', content: this.comment__lv1, comment_deep: [] })
+                    if (this.commentLv1.length != '') {
+                        this.comments.push({ name: 'Nguyễn Ngọc Anh', activeLike: false, like: 0, image: 'http://lh5.googleusercontent.com/-fylZF9ONaQg/WBP6lXY-A9I/AAAAAAABADA/BO_0loTj3u8keNXa4vRShuvvsxmcRBtNQCLcB/s1600/OhGai.Net-0202291016.jpg', content: this.commentLv1, comment_deep: [] })
                     }
                 },
                 replyComment: function (index1) {
-                    if (this.comment__lv2.length != '') {
-                        this.comments[index1].comment_deep.push({ name: 'Nguyễn Ngọc Anh', like: 0, image: 'http://lh5.googleusercontent.com/-fylZF9ONaQg/WBP6lXY-A9I/AAAAAAABADA/BO_0loTj3u8keNXa4vRShuvvsxmcRBtNQCLcB/s1600/OhGai.Net-0202291016.jpg', content: this.comment__lv2 });
-                        this.comment__lv2 = '';
+                    if (this.commentLv2.length != '') {
+                        this.comments[index1].comment_deep.push({ name: 'Nguyễn Ngọc Anh', activeLike: false, like: 0, image: 'http://lh5.googleusercontent.com/-fylZF9ONaQg/WBP6lXY-A9I/AAAAAAABADA/BO_0loTj3u8keNXa4vRShuvvsxmcRBtNQCLcB/s1600/OhGai.Net-0202291016.jpg', content: this.commentLv2 });
+                        this.commentLv2 = '';
                     }
                 },
                 showComment: function (index1, tagName) {
                     var textComment = document.getElementsByClassName('show__comment');
                     textComment[index1].style.display = "block";
                     if (tagName != undefined) {
-                        textComment[index1].querySelector('textarea').textContent = `@ ${tagName}`;
+                        textComment[index1].querySelector('textarea').value = `@ ${tagName} `;
                     }
                 },
                 likeComment: function (index1) {
-                    this.comments[index1].like += 1;
+                    this.comments[index1].like = !this.comments[index1].like + 1;
+                    this.comments[index1].activeLike = !this.comments[index1].activeLike;
+
                 },
                 likeComment_deep: function (index1, index2) {
                     this.comments[index1].comment_deep[index2].like += 1;
+                    this.comments[index1].comment_deep[index2].activeLike = !this.comments[index1].comment_deep[index2].activeLike;
+
                 }
             }
         })
